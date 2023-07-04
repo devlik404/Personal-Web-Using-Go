@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .form-project .form-data{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            gap: 3px;
+        }
+        .form-group{
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-date{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+        }
+        .form-date label{
+            margin-bottom: 5px;
+        }
+        .form-date input{
+            padding: 5px;
+        }
+        .form-project .form-data label{
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .form-project .form-data input,
+        .form-project .form-data textarea{
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgb(207, 207, 207);
+            border-style: none;
+        }
+        .form-project .form-data ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr); 
+            list-style-type: none;
+        
+        }
+        .form-project .button{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .form-project .button button{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border-style: none;
+            background-color: rgba(255, 141, 1, 0.884);
+        }
+        .form-project .button button a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        .form-data .choose-file{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="image/brandwhite.png" alt=""></li>
+            <li><a href="index.htmlN">Home</a></li>
+            <li><a href="index2.html">My Project</a></li>
+            <li><button><a href="index2.html">Contact Me</a></button></li>
+        </ul>
+    </nav>
+    <section>
+        <form action="">
+            <div class="form-project">
+                <h1>ADD MY PROJECT</h1>
+       
+                <div class="form-data">
+                    <label for="name">Project Name</label>
+                    <input type="text" name="name" id="">
+                </div>
+                <div class="form-data">
+                    <div class="form-group">
+                        <div class="form-date">
+                            <label for="fdate">Start Date</label>
+                            <input type="date" id="fdate" name="fdate">
+                        </div>
+                      <div class="form-date">
+                        <label for="ldate">End Date</label>
+                        <input type="date" id="ldate" name="ldate">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-data">
+                    <label for="message">Description</label>
+                    <textarea name="message" rows="10" cols="10"></textarea>
+                </div>
+                <div class="form-data">
+                    <label for="">Techologies</label>
+                    <ul>
+                        <li><input type="checkbox" id="vehicle1" name="vehicle1" value="node">
+                            <label for="vehicle1"> Node Js</label>
+                        </li>
+                        <li><input type="checkbox" id="vehicle2" name="vehicle2" value="react">
+                            <label for="vehicle2"> React Js</label>
+                        </li>
+                        <li><input type="checkbox" id="vehicle3" name="vehicle3" value="next">
+                            <label for="vehicle3"> Next Js</label>
+                        </li>
+                        <li> <input type="checkbox" id="vehicle4" name="vehicle4" value="type">
+                            <label for="vehicle4"> TypeScript</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-data">
+                  <label for="file">Upload File</label>
+                  <input class="choose-file" type="file" name="file" id="file">
+                </div>
+                <div class="button" id="button">
+                    <button><a href="#">Send Data</a>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+</body>
+</html>
