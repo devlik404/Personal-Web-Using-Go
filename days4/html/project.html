@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../css/cards.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <ul>
+            <li><img src="../image/brandwhite.png" alt=""></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">My Project</a></li>
+            <li><button><a href="index2.html">Contact Me</a></button></li>
+        </ul>
+    </nav>
+    <!-- navbar end -->
+
+ <!-- container form project -->
+    <section>
+        <form method="post" onsubmit="Blogs(event)">
+            <div class="form-project">
+                <h1>ADD MY PROJECT</h1>
+       
+                <div class="form-data">
+                    <label for="name">Project Name</label>
+                    <input type="text" name="name" id="PName" required>
+                </div>
+                <div class="form-data">
+                    <div class="form-group">
+                        <div class="form-date">
+                            <label for="fdate">Start Date</label>
+                            <input type="text" id="FDate" name="FDate" required>
+                        </div>
+                      <div class="form-date">
+                        <label for="ldate">End Date</label>
+                        <input type="text" id="LDate" name="LDate" required>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-data">
+                    <label for="message">Description</label>
+                    <textarea name="message" rows="10" cols="10" id="TxtMsg" required></textarea>
+                </div>
+                <div class="form-data">
+                    <label for="">Techologies</label>
+                    <ul>
+                        <li><input type="checkbox" id="Cbx1" name="Cbx1" value="JavaScript" >
+                            <label for="Cbx1"> JavaScript</label>
+                        </li>
+                        <li><input type="checkbox" id="Cbx2" name="Cbx2" value="Java" >
+                            <label for="Cbx2">Java</label>
+                        </li>
+                        <li><input type="checkbox" id="Cbx3" name="Cbx3" value="Golang">
+                            <label for="Cbx3"> Golang</label>
+                        </li>
+                        <li> <input type="checkbox" id="Cbx4" name="Cbx4" value="Python" >
+                            <label for="Cbx4"> Python</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-data">
+                    <label>Upload Image</label>
+                    <div class="input-group">
+                        <label for="file">
+                        <p>Attach File</p>
+                        <img src="../image/attach-30.png" alt="file" />
+                        <input type="file" id="file" name="file" min="0" max="100" step="10" hidden />
+                        </label>
+                    </div>
+                </div>
+                <div class="button" >
+                    <button type="submit" id="button"><a>Send Data</a></button>
+                </div>
+            </div>
+        </form>
+    </section>
+<!-- container form project end -->
+
+<!-- conatiner Cards if push -->
+    <section id="contain-cards">
+        <h1>MY PROJECT</h1>
+        <div class="container-cards" id="container-card"></div>
+    </section>
+<!-- container cards end -->
+<script src="../js/script.js"></script>
+</body>
+</html>

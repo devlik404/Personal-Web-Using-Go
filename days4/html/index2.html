@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form contact</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/form.css">
     <style>
 
     </style>
@@ -14,48 +14,48 @@
 <body>
     <nav>
         <ul>
-            <li><img src="image/brandwhite.png" alt=""></li>
+            <li><img src="../image/brandwhite.png" alt=""></li>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">My Project</a></li>
+            <li><a href="project.html">My Project</a></li>
             <li><button><a href="index2.html">Contact Me</a></button></li>
         </ul>
     </nav>
-    <form action="#" id="form">
+    <form action="#" id="form" onsubmit="sendData(event)" >
         <div class="form-contact">
             <h1>GET IN TOUCH</h1>
             <div class="form-action">
                 <div class="form-data">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="">
+                    <input type="text" name="name" id="name" >
                 </div>
                 <div class="form-data">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="">
+                    <input type="email" name="email" id="email" >
                 </div>
                 <div class="form-data">
                     <label for="tel">Phone Number</label>
-                    <input type="tel" name="tel" id="">
+                    <input type="tel" name="tel" id="tlp" >
                 </div>
                 <div class="form-data">
                     <label for="subject">Subject</label>
-                    <select name="suject">
-                        <option value="icon" selected></option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
-                      </select>
+                    <select  id="opt" name="subject">
+                        <option value=""></option>
+                        <option value="FrontEnd Developer">FrontEnd Developer</option>
+                        <option value="BackEnd Developer">BackEnd Developer</option>
+                        <option value="FullStack Developer">FullStack Developer</option>
+                    </select>
                 </div>
                 <div class="form-data">
                     <label for="text">Your Massage</label>
-                    <textarea name="message" rows="10" cols="10">
-                        please give me task!!
-                        </textarea>
+                    <textarea id="msg" name="message"  cols="50"></textarea>
                 </div>
                 <div class="button">
-                    <button><a href="#">Send Data</a>
+                    <button id="btn" type="submit" >Send Data</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <script src="../js/contact.js"></script>
 </body>
 </html>
