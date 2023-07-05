@@ -62,10 +62,10 @@ function Cards(){
                         <p>durasi : ${FakeD[i].FirstD} | ${FakeD[i].LastD}</p>
                         <p>${FakeD[i].Message}</p>
                         <div class="favicon-project">
-                        <a href="">  ${FakeD[i].CheckBox1 ? '<img src="../image/icons8-javascript-48.png" alt="JavaScript">' : ''}</a>
-                        <a href=""> ${FakeD[i].CheckBox2 ? '<img src="../image/ava-48.png" alt="Java">' : ''}</a>
-                        <a href="">   ${FakeD[i].CheckBox3 ? '<img src="../image/golang-48.png" alt="Golang">' : ''}</a>
-                        <a href=""> ${FakeD[i].CheckBox4 ? '<img src="../image/python-48.png" alt="Python">' : ''}</a>
+                        <a href="">  ${FakeD[i].CheckBox1 ? '<img src="image/icons8-javascript-48.png" alt="JavaScript">' : ''}</a>
+                        <a href=""> ${FakeD[i].CheckBox2 ? '<img src="image/ava-48.png" alt="Java">' : ''}</a>
+                        <a href="">   ${FakeD[i].CheckBox3 ? '<img src="image/golang-48.png" alt="Golang">' : ''}</a>
+                        <a href=""> ${FakeD[i].CheckBox4 ? '<img src="image/python-48.png" alt="Python">' : ''}</a>
                         </div>
                     </div>
                     <div class="btn-edit">
