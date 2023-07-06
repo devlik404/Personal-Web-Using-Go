@@ -7,16 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/mode.css">
 </head>
 <body id="#home">
+    <!-- navbar -->
     <nav>
         <ul>
             <li><img src="image/brandwhite.png" alt=""></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="project.html">My Project</a></li>
             <li><button><a href="index2.html">Contact Me</a></button></li>
+            <li>    
+                <label for="lightmode" class="toggler">
+                <input type="checkbox" id="lightmode">
+                <span class="ball"></span>
+                <i class="sun"><img src="image/sun.png" alt=""></i>
+                <i class="moon"><img src="image/moon.png" alt=""></i>
+            </label>
+        </li>
         </ul>
     </nav>
+    <!-- navbar end -->
     <section>
         <div class="container">
             <div class="content">
@@ -55,6 +66,6 @@
         </div>
     </section>
     
-
+    <script src="js/lightmode.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+#lightmode{
+    display: none;
+}
+.toggler{
+    display: block;
+    width: 56px;
+    height: 25px;
+    border: 2px solid rgb(122, 8, 8);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+   
+}
+.bgnColor{
+    background-color: rgb(0, 0, 0);
+}
+.ball,
+.sun,
+.moon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.ball{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(104, 14, 14);
+    border-radius: 50%;
+    left: 1px;
+    z-index: 10;
+    transition:transform;
+}
+.sun img,
+.moon img{
+    width: 18px;
+    height: 18px;
+}
+.sun{
+    left: 5px;
+}
+.moon{
+    right: 5px;
+}
+#lightmode:checked + .ball{
+    transform: translate(30px, -50%);
+}
+.light{
+    background-color: black;
+    color: white;
+}

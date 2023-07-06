@@ -7,7 +7,6 @@ section{
     height: 100vh;
     width: 90%;
     margin-inline: auto;
-    background-color: #fff7cd;
 }
 .container h1{
     
@@ -30,7 +29,7 @@ section{
 .content .card{
     margin-top: 20px;  
     border-radius: 10px; 
-    box-shadow:-0.2rem -0.2rem #000000;
+    box-shadow:-0.2rem -0.2rem #00000034;
     padding: 20px;
 }
 .text-item .button-group{
@@ -41,7 +40,7 @@ section{
 }
 .btn-save a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 196, 1);
     font-size:19px;
     padding: 5px;
 }
@@ -49,6 +48,7 @@ section{
     color: #665b43;
 }
 .btn-contact{
+    box-shadow: 0px 1px 3px rgba(255, 228, 196, 0.212);
     background-color: black;
     color: rgb(255, 255, 255);
     width: 100px;
@@ -83,7 +83,7 @@ section{
     display: inline-block;
     padding: 5px;
     border-radius: 50%;
-    box-shadow: 0 0 50px #ccc;
+    box-shadow: 0 0 20px #ccccccdc;
     margin: 3px;
 }
 .card-profile{
@@ -98,6 +98,7 @@ section{
 }
 .card-profile .activity{
     background-color: rgb(252, 235, 160);
+    color: #665b43;
     text-align: center;
     margin-top: -5px;
     padding: 10px;

@@ -3,7 +3,6 @@
     margin: 0;
 }
 form{
-    background-color: rgb(223, 223, 223);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -34,7 +33,7 @@ form .form-action .form-data{
 .form-action .form-data textarea{
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgb(207, 207, 207);
+    box-shadow: 0px 0px 10px rgba(207, 207, 207, 0.726);
     border-style: none;
 }
 .form-action .button{

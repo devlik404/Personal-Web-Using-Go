@@ -1,6 +1,8 @@
 nav{
     background-color: rgb(255, 60, 26);
     font-family: 'Kaisei Opti', serif;
+    position: sticky;
+    top: 0;
 }
 nav ul{
     display: flex;
@@ -32,7 +34,7 @@ nav ul li:nth-child(4) {
     display: flex;
     justify-content:flex-end;
     align-items: center;
-    margin-right: 90px;
+    margin-right: 40px;
 }
 nav ul li:nth-child(4) button{
     border-style: none;
@@ -45,4 +47,7 @@ nav ul li:nth-child(4) button:hover,
 .form-action .button button:hover{
     background-color: rgba(255, 147, 14, 0.856);
 }
- 
+nav ul li:nth-child(5){
+
+    width: 1%;
+}

@@ -7,16 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/mode.css">
 </head>
 <body>
+    <!-- navbar -->
     <nav>
         <ul>
             <li><img src="image/brandwhite.png" alt=""></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="project.html">My Project</a></li>
             <li><button><a href="index2.html">Contact Me</a></button></li>
+            <li>    
+                <label for="lightmode" class="toggler">
+                <input type="checkbox" id="lightmode">
+                <span class="ball"></span>
+                <i class="sun"><img src="image/sun.png" alt=""></i>
+                <i class="moon"><img src="image/moon.png" alt=""></i>
+            </label>
+        </li>
         </ul>
     </nav>
+    <!-- navbar end -->
     <section>
         <h1>Dumbways Web App</h1>
         <div class="container">
@@ -57,5 +68,6 @@
             Fuga quis sed minima quam quia at excepturi error architecto sunt corrupti ipsa eos impedit tempore deleniti iure laborum, asperiores debitis doloribus voluptatem, pariatur accusantium. Dolorem soluta aut ut eaque!
         </article>
     </section>
+    <script src="js/lightmode.js"></script>
 </body>
 </html>
