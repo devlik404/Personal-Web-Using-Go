@@ -68,7 +68,7 @@ function Cards(){
                     </div>
                     <div class="btn-edit">
                         <button type="button">edit</button>
-                        <button type="reset" class="close" >delete</button>
+                        <button type="reset">delete</button>
                     </div>
             </div>`
     }
@@ -116,10 +116,11 @@ function Ldate(Fdate,LastD){
     }
 
 }
-// set cards selama 1 detik sekali
-setInterval(() => {
-   Cards();
-}, 1000) // 1000ms = 0.001 seconds
+// // set cards selama 1 detik sekali
+// setInterval(() => {
+//    Cards();
+   
+// }, 1000) // 1000ms = 0.001 seconds
 
 
 
