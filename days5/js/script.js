@@ -68,7 +68,7 @@ function Cards(){
                     </div>
                     <div class="btn-edit">
                         <button type="button">edit</button>
-                        <button type="reset" class="close" >${FakeD[i].close}delete</button>
+                        <button type="reset" class="close" >delete</button>
                     </div>
             </div>`
     }
@@ -82,8 +82,6 @@ function Ldate(Fdate,LastD){
     let timeNow = new Date(Fdate);
     let PostTime = new Date(LastD);
     let Time =  Math.abs( timeNow - PostTime);
-
-
 
     let seconds = Math.floor(Time / 1000);
     let minutes = Math.floor(seconds / 60);
