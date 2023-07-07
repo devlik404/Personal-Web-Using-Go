@@ -21,6 +21,7 @@ const Blogs = (e) => {
         const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
         //jika yang di upload adalah tipe gambar  yang diizinkan maka lolos
         if (allowedTypes.includes(file.type)) {
+            // blob 
         files = URL.createObjectURL(files[0])
 
             // buat object dari value yang telah diambil
@@ -116,11 +117,6 @@ function Ldate(Fdate,LastD){
     }
 
 }
-// // set cards selama 1 detik sekali
-// setInterval(() => {
-//    Cards();
-   
-// }, 1000) // 1000ms = 0.001 seconds
 
 
 

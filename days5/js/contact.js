@@ -25,3 +25,12 @@ function sendData(event){
         a.click()
     }
 }
+
+// download resume
+const link = document.querySelector('.download');
+link.addEventListener('click', function(){
+    link.download = 'image/HTML.png';
+});
+
+
+
