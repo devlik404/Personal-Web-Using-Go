@@ -14,7 +14,6 @@ form h1{
     text-align: center;
 }
 .form-contact{
-  
     width: 50%;
     height: 100vh;
 }
@@ -50,4 +49,14 @@ form .form-action .form-data{
 .form-action .button button a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width: 600px){
+    .form-contact{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
 }
