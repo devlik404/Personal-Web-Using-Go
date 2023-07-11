@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/mode.css">
+</head>
+<body>
+
+          <!-- navbar -->
+          <nav class="nav">
+            <div class="judul">
+               <img src="image/brandwhite.png" alt="" width="50px">
+            </div>
+        
+               <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="profile.html">Blog</a></li>
+                   <li><a href="project.html">My Project</a></li>
+                   <li style="float: right;">    
+                    <label for="lightmode" class="toggler">
+                    <input type="checkbox" id="lightmode">
+                    <span class="ball"></span>
+                    <i class="sun"><img src="image/sun.png" alt=""></i>
+                    <i class="moon"><img src="image/moon.png" alt=""></i>
+                </label>
+                   </li>
+                   <li style="float: right;"><button><a href="index2.html">Contact Me</a></button></li>
+            </ul>
+    
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- navbar end -->
+
+    <form action="#" id="form" onsubmit="sendData(event)" >
+        <div class="form-contact">
+            <h1>GET IN TOUCH</h1>
+            <div class="form-action">
+                <div class="form-data">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" >
+                </div>
+                <div class="form-data">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" >
+                </div>
+                <div class="form-data">
+                    <label for="tel">Phone Number</label>
+                    <input type="tel" name="tel" id="tlp" >
+                </div>
+                <div class="form-data">
+                    <label for="subject">Subject</label>
+                    <select  id="opt" name="subject">
+                        <option value=""></option>
+                        <option value="FrontEnd Developer">FrontEnd Developer</option>
+                        <option value="BackEnd Developer">BackEnd Developer</option>
+                        <option value="FullStack Developer">FullStack Developer</option>
+                    </select>
+                </div>
+                <div class="form-data">
+                    <label for="text">Your Massage</label>
+                    <textarea id="msg" name="message"  cols="50"></textarea>
+                </div>
+                <div class="button">
+                    <button id="btn" type="submit" >Send Data</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="js/contact.js"></script>
+    <script src="js/lightmode.js"></script>
+</body>
+</html>

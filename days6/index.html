@@ -5,28 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day1-creating card</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/mode.css">
 </head>
 <body>
-    <!-- navbar -->
-    <nav>
-        <ul>
-            <li><img src="image/brandwhite.png" alt=""></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project.html">My Project</a></li>
-            <li><button><a href="index2.html">Contact Me</a></button></li>
-            <li>    
+      <!-- navbar -->
+      <nav class="nav">
+        <div class="judul">
+           <img src="image/brandwhite.png" alt="" width="50px">
+        </div>
+    
+           <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="profile.html">Blog</a></li>
+               <li><a href="project.html">My Project</a></li>
+               <li style="float: right;">    
                 <label for="lightmode" class="toggler">
                 <input type="checkbox" id="lightmode">
                 <span class="ball"></span>
                 <i class="sun"><img src="image/sun.png" alt=""></i>
                 <i class="moon"><img src="image/moon.png" alt=""></i>
             </label>
-        </li>
+               </li>
+               <li style="float: right;"><button><a href="index2.html">Contact Me</a></button></li>
         </ul>
-    </nav> 
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
     <!-- navbar end -->
     <section>
         <div class="container">
