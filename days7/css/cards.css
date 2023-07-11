@@ -1,0 +1,50 @@
+
+h1{
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+.container-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.cards{
+    box-shadow: 0 4px 8px 0 rgba(112, 110, 110, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.007);
+    margin-bottom: 25px;
+    text-align: center;
+   
+}
+
+.cards img.img-pp {
+    width: 90%;
+    height: auto; 
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.card-name{
+    width: 90%;
+    margin-bottom: 20px;
+    display:inline-block;
+    text-align: start;
+}
+.favicon-project img{
+    width: 35px;
+}
+.card-name h3,
+.card-name p,
+.img-pp{
+    margin-bottom: 10px;
+}
+.cards button{
+    background-color: rgba(80, 80, 80, 0.836);
+    padding: .4em;
+    width: 45%;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
