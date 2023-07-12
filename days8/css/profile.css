@@ -1,0 +1,37 @@
+
+section h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.container ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+.container .date{ 
+    margin: 20px;
+}
+.container .tech {
+   margin-top: 20px;
+}
+.container .tech ul  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px;
+}
+@media only screen and (max-width: 920px) {
+    .container{
+    display: flex;
+    flex-direction: column;
+}
+.img img{
+    width: 100%;
+    height: auto;
+}
+}

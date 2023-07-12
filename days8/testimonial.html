@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/mode.css">
+    <link rel="stylesheet" href="css/rate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <!-- navbar -->
+        <nav class="nav">
+            <div class="judul">
+               <img src="image/brandwhite.png" alt="" width="50px">
+            </div>
+        
+               <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="project.html">My Project</a></li>
+                   <li><a href="testimonial.html">Testimonial</a></li>
+                   <li style="float: right;">    
+                    <label for="lightmode" class="toggler">
+                    <input type="checkbox" id="lightmode">
+                    <span class="ball"></span>
+                    <i class="sun"><img src="image/sun.png" alt=""></i>
+                    <i class="moon"><img src="image/moon.png" alt=""></i>
+                </label>
+                   </li>
+                   <li style="float: right;"><button><a href="index2.html">Contact Me</a></button></li>
+            </ul>
+    
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- navbar end -->
+
+       <section>
+        <h1>MY Testimonial</h1>
+        <hr>
+        <div class="Star-Rate">
+            <h3>Rating Testimoni</h3>
+
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick=" allRating()">All</i>
+            </button>
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick="StarRating(1)">1</i>
+            </button>
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick="StarRating(2)">2</i>
+            </button>
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick="StarRating(3)">3</i>
+            </button>
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick="StarRating(4)">4</i>
+            </button>
+            <button>
+                <i class="fa fa-star" aria-hidden="true" onclick="StarRating(5)">5</i>
+            </button>
+        </div>
+        <div class="container-cards" id="container-card">
+
+       </section>
+       
+       <script src="js/HOF.js"></script>
+       <script src="js/lightmode.js"></script>
+</body>
+</html>
