@@ -1,0 +1,113 @@
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.container-form{
+    padding: 20px;
+}
+.form-project .form-data{
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    gap: 3px;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+}
+.form-date{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.form-date label{
+    margin-bottom: 5px;
+}
+.form-date input{
+    padding: 5px;
+}
+.form-project .form-data label{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.form-project .form-data input,
+.form-project .form-data textarea{
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #777;
+    border-style: none;
+    margin-bottom: 30px;
+}
+.form-project .form-data ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    list-style-type: none;
+
+}
+.form-project .button{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+.form-project .button button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: rgba(255, 141, 1, 0.884);
+}
+.form-project .button button a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.input-group label{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #777;
+}
+.input-group label p{
+    display: inline-block;
+    background-color: rgb(151, 151, 151);
+    padding: 15px 12px;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* responsive */
+@media screen and (max-width: 920px){
+    form{
+    box-sizing: border-box;
+    }
+    .form-project .form-data{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 420px){
+    .form-date{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .form-group{
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+
+

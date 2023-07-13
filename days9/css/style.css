@@ -1,0 +1,21 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Martel&family=Monoton&family=Nunito&display=swap');
+/* font-family: 'Kaisei Opti', serif;
+font-family: 'Martel', serif;
+font-family: 'Monoton', cursive;
+font-family: 'Nunito', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    font-family:'Nunito', sans-serif;
+}
+section{
+    padding-top: 20px;
+    width: 90%;
+    margin-inline: auto;
+    padding-bottom: 20px;
+}                
