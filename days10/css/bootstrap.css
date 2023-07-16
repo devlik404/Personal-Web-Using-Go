@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Martel&family=Monoton&family=Nunito&display=swap');
+/* font-family: 'Kaisei Opti', serif;
+font-family: 'Martel', serif;
+font-family: 'Monoton', cursive;
+font-family: 'Nunito', sans-serif; */
+
+
+nav {
+    background-color:#ff3c1a;
+    color: rgb(255, 255, 255);
+}
+@media (max-width: 991.98px) { 
+    .navbar-collapse{
+        text-align: center;
+    }
+    .btn-contact{
+        justify-content: space-between;
+    }
+    .card-blog{
+        display: flex;
+        justify-content: center;
+      align-items: center;
+    }
+
+ }
+
+  @media (max-width:  575.98px) { 
+ .btn-sosmed{
+    width: 100%;
+ }
+  }
