@@ -53,21 +53,21 @@ const Blogs = (e) => {
 
 function Cards(){
      document.getElementById('container-card').innerHTML='';
-    for(let i = 0; i < FakeD.length; i++){
+    for(Data of FakeD){
         document.getElementById('container-card').innerHTML += `
         <div class="col">
         <div class="card" style="width: 100%;">
-        <a href="profile.html"><img src="${FakeD[i].files}" class="card-img-top" alt="..."></a>
+        <a href="profile.html"><img src="${Data.files}" class="card-img-top" alt="..."></a>
           <div class="card-body">
-            <h5 class="card-title">${FakeD[i].NameProject}</h5>
-            <h6 class="card-subtitle">Durasi :  ${Ldate(FakeD[i].FirstD,FakeD[i].LastD)}</h6>
-            <p class="card-text">${FakeD[i].Message}</p>
+            <h5 class="card-title">${Data.NameProject}</h5>
+            <h6 class="card-subtitle">Durasi :  ${Ldate(Data.FirstD,Data.LastD)}</h6>
+            <p class="card-text">${Data.Message}</p>
             <div class="container text-center">
               <div class="row row-cols-auto">
-                <div class="col">${FakeD[i].CheckBox1 ? '<img src="/image/ava-48.png" alt="Java">' : ''}</div>
-                <div class="col">${FakeD[i].CheckBox2 ? '<img src="/image/golang-48.png" alt="Golang">' : ''}</div>
-                <div class="col">${FakeD[i].CheckBox3 ? '<img src="/image/python-48.png" alt="Python">' : ''}</div>
-                <div class="col">${FakeD[i].CheckBox4 ? '<img src="/image/icons8-javascript-48.png" alt="JavaScript">' : ''}</div>
+                <div class="col">${Data.CheckBox1 ? '<img src="/image/ava-48.png" alt="Java">' : ''}</div>
+                <div class="col">${Data.CheckBox2 ? '<img src="/image/golang-48.png" alt="Golang">' : ''}</div>
+                <div class="col">${Data.CheckBox3 ? '<img src="/image/python-48.png" alt="Python">' : ''}</div>
+                <div class="col">${Data.CheckBox4 ? '<img src="/image/icons8-javascript-48.png" alt="JavaScript">' : ''}</div>
               </div>
             </div>
             <div class="d-flex justify-content-between update">

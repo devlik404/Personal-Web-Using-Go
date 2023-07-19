@@ -56,19 +56,19 @@ const Blogs = (e) => {
 
 function Cards(){
      document.getElementById('container-card').innerHTML='';
-    for(let i = 0; i < FakeD.length; i++){
+    for(Data of FakeD){
         document.getElementById('container-card').innerHTML += `
             <div class="cards">
-            <a href="profile.html" target="_blank"><img src="${FakeD[i].files}" alt="" class="img-pp"></a>
+            <a href="profile.html" target="_blank"><img src="${Data.files}" alt="" class="img-pp"></a>
                     <div class="card-name">
-                  <h3>${FakeD[i].NameProject}</h3>
-                        <p>durasi : ${Ldate(FakeD[i].FirstD,FakeD[i].LastD)}</p>
-                        <p>${FakeD[i].Message}</p>
+                  <h3>${Data.NameProject}</h3>
+                        <p>durasi : ${Ldate(Data.FirstD,Data.LastD)}</p>
+                        <p>${Data.Message}</p>
                         <div class="favicon-project">
-                        <a href="">  ${FakeD[i].CheckBox1 ? '<img src="image/icons8-javascript-48.png" alt="JavaScript">' : ''}</a>
-                        <a href=""> ${FakeD[i].CheckBox2 ? '<img src="image/ava-48.png" alt="Java">' : ''}</a>
-                        <a href="">   ${FakeD[i].CheckBox3 ? '<img src="image/golang-48.png" alt="Golang">' : ''}</a>
-                        <a href=""> ${FakeD[i].CheckBox4 ? '<img src="image/python-48.png" alt="Python">' : ''}</a>
+                        <a href="">  ${Data.CheckBox1 ? '<img src="image/icons8-javascript-48.png" alt="JavaScript">' : ''}</a>
+                        <a href=""> ${Data.CheckBox2 ? '<img src="image/ava-48.png" alt="Java">' : ''}</a>
+                        <a href="">   ${Data.CheckBox3 ? '<img src="image/golang-48.png" alt="Golang">' : ''}</a>
+                        <a href=""> ${Data.CheckBox4 ? '<img src="image/python-48.png" alt="Python">' : ''}</a>
                         </div>
                     </div>
                     <div class="btn-edit">

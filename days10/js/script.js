@@ -99,7 +99,7 @@ function Ldate(Fdate,LastD){
     
 
     if (Fdate > LastD) {
-        return "Peringatan: First Date tidak boleh lebih besar dari Last Date";
+        return swal("WARNING ", "please insert an First Date > Last Date !!", "warning")
     }
     
     if (days === 1 && hours === 0) {
