@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Card profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- style css modified -->
+    <link rel="stylesheet" href="/assets/css/mode.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/form.css">
+  </head>
+  <body>
+    <!-- navbar bootstrap-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <img class="navbar-brand" src="/assets/image/brandwhite.png" width="50px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link text-white " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  text-white" href="project">My Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  text-white" href="testimonial">Testimoni</a>
+              </li>
+            </ul>
+            <div class="d-flex align-center btn-contact">
+            <a href="index2" class="btn btn-warning text-white mx-2" type="button">Contact Us</a>
+            <div class="light-mode">
+                <label for="lightmode" class="toggler">
+                    <input type="checkbox" id="lightmode">
+                    <span class="ball"></span>
+                    <i class="sun"><img src="/assets/image/sun.png" alt=""></i>
+                    <i class="moon"><img src="/assets/image/moon.png" alt=""></i>
+                </label>
+            </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- end navbar -->
+    <!-- Form Project -->
+    <section>
+      <form action="/project-Blog" method="post" class="p-5" >
+        <h1>My Project</h1>
+          <div class="mb-3">
+              <label for="PName" class="form-label">Name Project</label>
+              <input type="text" class="form-control" id="PName" name="PName"  placeholder="please input your project">
+          </div>
+          <div class="row ">
+            <div class="col-auto w-50">
+              <label for="FDate" class="form-label">First Date</label>
+              <input type="datetime-local" class="form-control" id="FDate"
+              name="FDate">
+          </div>
+          <div class="col-auto w-50">
+              <label for="LDate" class="form-label">End Date</label>
+              <input type="datetime-local" class="form-control" id="LDate" name="LDate">
+          </div>
+          </div>
+          <div class="mb-3">
+              <label for="TxtMsg" class="form-label">Message</label>
+              <textarea class="form-control" id="TxtMsg" name="TxtMsg" rows="3"></textarea>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input " type="checkbox" id="Cbx1" name="Cbx1" value="true">
+                <label class="form-check-label m-2" for="Cbx1">Java</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="Cbx2" name="Cbx2" value="true">
+                <label class="form-check-label m-2" for="Cbx2">Golang</label>
+              </div>
+            </div>
+            <div class="mb-3 col-auto">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="Cbx3" name="Cbx3" value="true">
+                <label class="form-check-label m-2" for="Cbx3">Python</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="Cbx4" name="Cbx4" value="true">
+                <label class="form-check-label m-2" for="Cbx4">JavaScript</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="file" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="file">
+          </div>
+          <div class="mb3 text-end">
+            <button type="submit" class="btn btn-outline-warning" id="button">Submit</button>
+          </div>
+      </form>
+  </section>
+  <!-- form Project end -->
+  
+    <script src="/assets/js/lightmode.js"></script>
+    
+    <!-- <script src="/assets/js/script.js"></script> -->
+      <!-- framework cdn -->
+      <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

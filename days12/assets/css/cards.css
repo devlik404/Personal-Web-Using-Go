@@ -1,0 +1,25 @@
+#container-card{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(112, 110, 110, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.007);
+    
+   
+}
+.col{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.update form{
+    width: 40%;
+    padding: 2px;
+}
+.update button {
+    width: 100%;
+    padding: 2px;
+}

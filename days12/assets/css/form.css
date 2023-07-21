@@ -1,0 +1,22 @@
+
+form{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form h1{
+    padding: 20px;
+    text-align: center;
+}
+label{
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+ input,
+ select,
+ textarea{
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(207, 207, 207, 0.726);
+}
+
+
