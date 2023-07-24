@@ -1,24 +1,32 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
+	"io"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
+	"time"
 
 	"github.com/labstack/echo/v4"
 )
 
 type Project struct {
-	Id                                         int
-	Title, Duration, Articel                   string
+	Id int
+
+	StartDate, EndDate                         time.Time
+	Duration                                   time.Duration
+	Path, Title, Articel                       string
 	CheckBox1, CheckBox2, CheckBox3, CheckBox4 bool
 }
 
 var MyBlogs = []Project{
 	{
 		Id:        1,
+		Path:      "2.jpg",
 		Title:     "Software Enginering",
-		Duration:  "20-07-2023",
 		Articel:   "program sekarang harus memiliki paradigma peprogrmana ",
 		CheckBox1: false,
 		CheckBox2: true,
@@ -27,8 +35,18 @@ var MyBlogs = []Project{
 	},
 	{
 		Id:        2,
+		Path:      "7.jpg",
 		Title:     "CEO Enginer",
-		Duration:  "20-07-2023",
+		Articel:   "saya memliki pandangan khusus sebuah paradigma pemprograman ",
+		CheckBox1: true,
+		CheckBox2: false,
+		CheckBox3: false,
+		CheckBox4: true,
+	},
+	{
+		Id:        2,
+		Path:      "9.jpg",
+		Title:     "CEO Enginer",
 		Articel:   "saya memliki pandangan khusus sebuah paradigma pemprograman ",
 		CheckBox1: true,
 		CheckBox2: false,
@@ -47,32 +65,34 @@ func main() {
 	e.GET("/projectAdd", projectAdd)
 	e.GET("/testimonial", Testimonial)
 	e.POST("/project-Blog", addProject)
+
 	e.POST("/Delete/:id", ProjectDelete)
+
 	e.GET("/update/:id", UpdateDataForm)
 	e.POST("/updateProject", UpdateData)
 
 	e.Logger.Fatal(e.Start("localhost:500"))
 }
 func Home(c echo.Context) error {
-	tme, error := template.ParseFiles("html/index.html")
-	if error != nil {
-		return c.JSON(http.StatusInternalServerError, error.Error())
+	tme, err := template.ParseFiles("html/index.html")
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 	return tme.Execute(c.Response(), nil)
 }
 
 func formEmail(c echo.Context) error {
-	tme, error := template.ParseFiles("html/index2.html")
-	if error != nil {
-		return c.JSON(http.StatusInternalServerError, error.Error())
+	tme, err := template.ParseFiles("html/index2.html")
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 	return tme.Execute(c.Response(), nil)
 }
 
 func MyProject(c echo.Context) error {
-	tme, error := template.ParseFiles("html/project.html")
-	if error != nil {
-		return c.JSON(http.StatusInternalServerError, error.Error())
+	tme, err := template.ParseFiles("html/project.html")
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 	Data := map[string]interface{}{
 		"projects": MyBlogs,
@@ -81,9 +101,9 @@ func MyProject(c echo.Context) error {
 }
 
 func projectAdd(c echo.Context) error {
-	tme, error := template.ParseFiles("html/projectAdd.html")
-	if error != nil {
-		return c.JSON(http.StatusInternalServerError, error.Error())
+	tme, err := template.ParseFiles("html/projectAdd.html")
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 	return tme.Execute(c.Response(), nil)
 }
@@ -109,6 +129,7 @@ func BlogDetail(c echo.Context) error {
 
 		if indexs == Iton {
 			DetailProject = Project{
+				Path:      data.Path,
 				Title:     data.Title,
 				Duration:  data.Duration,
 				Articel:   data.Articel,
@@ -130,29 +151,76 @@ func BlogDetail(c echo.Context) error {
 func addProject(c echo.Context) error {
 
 	nameProject := c.FormValue("PName")
-	// startDate := c.FormValue("FDate")
-	// LastDate := c.FormValue("LDate")
+	startDate := c.FormValue("FDate")
+	LastDate := c.FormValue("LDate")
 	TxtMsg := c.FormValue("TxtMsg")
-	checkbox1 := c.FormValue("Cbx1")
-	checkbox2 := c.FormValue("Cbx2")
-	checkbox3 := c.FormValue("Cbx3")
-	checkbox4 := c.FormValue("Cbx4")
 
-	boolValue, _ := strconv.ParseBool(checkbox1)
-	boolValue1, _ := strconv.ParseBool(checkbox2)
-	boolValue2, _ := strconv.ParseBool(checkbox3)
-	boolValue3, _ := strconv.ParseBool(checkbox4)
+	//ambil value dari stiap checkbox dan convert ke bool
+	checkbox1, _ := strconv.ParseBool(c.FormValue("Cbx1"))
+	checkbox2, _ := strconv.ParseBool(c.FormValue("Cbx2"))
+	checkbox3, _ := strconv.ParseBool(c.FormValue("Cbx3"))
+	checkbox4, _ := strconv.ParseBool(c.FormValue("Cbx4"))
 
-	ProjectNew := Project{
-		Title:     nameProject,
-		Duration:  "20-07-2023",
-		Articel:   TxtMsg,
-		CheckBox1: boolValue,
-		CheckBox2: boolValue1,
-		CheckBox3: boolValue2,
-		CheckBox4: boolValue3,
+	/*-----------------------input date section-------------------*/
+
+	// Parse tanggal dari string ke format time.Time
+
+	layout := "2006-01-02" // Format dari input date
+
+	Start, err := time.Parse(layout, startDate)
+	if err != nil {
+		return fmt.Errorf("Error parsing Start Date: %s", err)
+	}
+	End, err := time.Parse(layout, LastDate)
+	if err != nil {
+		return fmt.Errorf("Error parsing End Date: %s", err)
+	}
+	if Start.After(End) {
+		return c.String(http.StatusRequestURITooLong, "WARNING: Please insert a First Date > Last Date!!")
+	}
+	// Hitung durasi (selisih) antara endDate dan startDate
+	duration := End.Sub(Start)
+
+	/*---------------   input file section   ----------------- */
+
+	//ambil value dari name input file
+	file, err := c.FormFile("image")
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Error uploading file")
+	}
+	// Dapatkan nama file dari file yang diunggah
+	fileName := file.Filename
+	// Buka file yang akan diunggah
+	src, err := file.Open()
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "Error opening file")
+	}
+	defer src.Close()
+
+	// Buat file baru di server untuk menyimpan gambar
+	dstPath := filepath.Join("assets", "image", fileName)
+	dst, err := os.Create(dstPath)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "Error creating destination file")
+	}
+	defer dst.Close()
+
+	// Salin isi file dari src ke dst (unggah)
+	if _, err := io.Copy(dst, src); err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
 
+	ProjectNew := Project{
+		Path:      fileName,
+		Title:     nameProject,
+		Duration:  duration,
+		Articel:   TxtMsg,
+		CheckBox1: checkbox1,
+		CheckBox2: checkbox2,
+		CheckBox3: checkbox3,
+		CheckBox4: checkbox4,
+	}
+	fmt.Println(ProjectNew.Path)
 	MyBlogs = append(MyBlogs, ProjectNew)
 
 	return c.Redirect(http.StatusMovedPermanently, "/project")
@@ -179,6 +247,7 @@ func UpdateDataForm(c echo.Context) error {
 		if id == i {
 			UpdateForm = Project{
 				Id:        i,
+				Path:      update.Path,
 				Title:     update.Title,
 				Articel:   update.Articel,
 				CheckBox1: update.CheckBox1,
@@ -208,6 +277,33 @@ func UpdateData(c echo.Context) error {
 	checkbox3, _ := strconv.ParseBool(c.FormValue("Cbx3"))
 	checkbox4, _ := strconv.ParseBool(c.FormValue("Cbx4"))
 
+	//ambil value dari name input file
+	file, err := c.FormFile("image")
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Error uploading file")
+	}
+	// Dapatkan nama file dari file yang diunggah
+	fileName := file.Filename
+	// Buka file yang akan diunggah
+	src, err := file.Open()
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "Error opening file")
+	}
+	defer src.Close()
+
+	// Buat file baru di server untuk menyimpan gambar
+	dstPath := filepath.Join("assets", "image", fileName)
+	dst, err := os.Create(dstPath)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "Error creating destination file")
+	}
+	defer dst.Close()
+
+	// Salin isi file dari src ke dst (unggah)
+	if _, err := io.Copy(dst, src); err != nil {
+		return c.JSON(http.StatusInternalServerError, err.Error())
+	}
+	MyBlogs[id].Path = fileName
 	MyBlogs[id].Title = nameProject
 	MyBlogs[id].Articel = TxtMsg
 	MyBlogs[id].CheckBox1 = checkbox1

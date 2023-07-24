@@ -58,7 +58,7 @@
         {{range $index,$project := .projects}}
         <div class="col">
           <div class="card" style="width: 100%;">
-           <a href="/profile/{{$index}}"><img src="/assets/image/5.jpg" class="card-img-top" alt="..."></a> 
+           <a href="/profile/{{$index}}"><img src="/assets/image/{{$project.Path}}" class="card-img-top" alt="..."></a> 
             <div class="card-body">
               <h5 class="card-title">{{$project.Title}}</h5>
               <h6 class="card-subtitle">{{$project.Duration}}</h6>

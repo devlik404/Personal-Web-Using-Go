@@ -47,7 +47,7 @@
     <!-- end navbar -->
     <!-- Form Project -->
     <section>
-      <form action="/updateProject" method="post" class="p-5" >
+      <form action="/updateProject" method="post" enctype="multipart/form-data" class="p-5" >
         <h1>My Project</h1>
         <input type="hidden" class="form-control"  name="id" id="id" value="{{.projects.Id}}">
           <div class="mb-3">
@@ -93,7 +93,7 @@
           </div>
           <div class="mb-3">
             <label for="file" class="form-label">Upload Image</label>
-            <input class="form-control" type="file" name="image"  id="file">
+            <input  class="form-control" id="file" type="file" name="image" accept="image/*">
           </div>
           <div class="mb3 text-end">
             <button type="submit" class="btn btn-outline-warning" id="button">Submit</button>
