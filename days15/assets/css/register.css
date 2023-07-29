@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(255, 246, 162);
+}
+form{
+   background-color: #ffffff;
+
+}
+ .btn-reg{
+    background: linear-gradient(to top right, #ffcc00 41%, #ffff66 100%);
+}
+ .btn-log{
+    background: linear-gradient(to bottom left, #ffffff 0%, #ccff33 60%);
+}
